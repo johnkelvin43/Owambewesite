@@ -1,5 +1,8 @@
 package demo.demo;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -29,6 +32,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCenter.start(getApplication(), "afc34e21-3480-4dce-884b-544311b595fe",
+                  Analytics.class, Crashes.class);
         setContentView(R.layout.activity_main2);
         progressx=new ProgressDialog(this);
         progressx.setMessage("Please wait... ");
@@ -88,7 +93,7 @@ public class MainActivity extends Activity {
         webView.setWebChromeClient(new WebChromeClient());
 
 
-        webView.loadUrl("http://www.demo.com");
+        webView.loadUrl("http://www.owambestyles.com");
     }
 
 
